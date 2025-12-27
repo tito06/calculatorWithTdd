@@ -2,7 +2,7 @@ package org.example
 
 class StringCalculator {
 
-    fun calculate(s: String): Int{
-        throw NotImplementedError()
+    fun add(s: String): Int{
+        return 0
     }
 }

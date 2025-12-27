@@ -7,7 +7,7 @@ class StringCalculatorTest {
     @Test
     fun emptyStringReturnsZero(){
         val calculator = StringCalculator()
-        val result = calculator.calculate("")
+        val result = calculator.add("")
         assertEquals(0, result)
 
     }
