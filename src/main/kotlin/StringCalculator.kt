@@ -6,14 +6,17 @@ class StringCalculator {
     fun add(s: String): Int{
         if (s.isEmpty()) return 0
 
-        var delimiter = arrayOf(",","\n")
-        var numberParts = s
+        val (delimiter, numbersPart) = extractDelimiter(s)
 
-        if(s.startsWith("//")){
-            delimiter = arrayOf(s[2].toString())
-            numberParts = s.substring(4)
+
+        return numbersPart.split(*delimiter).map { it.toInt() }.sum()
+    }
+
+    private fun extractDelimiter(numbers: String): Pair<Array<String>, String> {
+        return if (numbers.startsWith("//")) {
+            Pair(arrayOf(numbers[2].toString()), numbers.substring(4))
+        } else {
+            Pair(arrayOf(",", "\n"), numbers)
         }
-
-        return numberParts.split(*delimiter).map { it.toInt() }.sum()
     }
 }

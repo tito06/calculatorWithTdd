@@ -1,5 +1,6 @@
 import org.example.StringCalculator
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 
 class StringCalculatorTest {
@@ -31,5 +32,19 @@ class StringCalculatorTest {
         val calculator = StringCalculator()
         val result = calculator.add("//;\n1;2")
         assertEquals(3, result)
+    }
+
+    @Test
+    fun `should throw exception when negative numbers are present`() {
+        val calculator = StringCalculator()
+
+        val exception = assertThrows<IllegalArgumentException> {
+            calculator.add("1,-2,-3")
+        }
+
+        assertEquals(
+            "negative numbers not allowed: -2, -3",
+            exception.message
+        )
     }
 }
