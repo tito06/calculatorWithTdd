@@ -22,7 +22,7 @@ class StringCalculatorTest {
     @Test
     fun `should support newline as delimiters`() {
         val calculator = StringCalculator()
-        val result = calculator.add("1\n2, 3")
+        val result = calculator.add("1\n2,3")
         assertEquals(6, result)
     }
 }

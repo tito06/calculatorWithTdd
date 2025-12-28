@@ -6,6 +6,6 @@ class StringCalculator {
     fun add(s: String): Int{
         if (s.isEmpty()) return 0
 
-        return s.split(",").map { it.toInt() }.sum()
+        return s.split(",", "\n").map { it.toInt() }.sum()
     }
 }
