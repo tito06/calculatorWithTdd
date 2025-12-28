@@ -11,4 +11,11 @@ class StringCalculatorTest {
         assertEquals(0, result)
 
     }
+
+    @Test
+    fun `should return sum of multiple numbers`() {
+        val calculator = StringCalculator()
+        val result = calculator.add("1,2,3,4")
+        assertEquals(10, result)
+    }
 }
