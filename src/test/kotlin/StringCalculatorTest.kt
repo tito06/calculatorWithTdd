@@ -25,4 +25,11 @@ class StringCalculatorTest {
         val result = calculator.add("1\n2,3")
         assertEquals(6, result)
     }
+
+    @Test
+    fun `should supporty custom delimiters`() {
+        val calculator = StringCalculator()
+        val result = calculator.add("//:1;2")
+        assertEquals(3, result)
+    }
 }
