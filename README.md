@@ -12,6 +12,16 @@ Test-Driven Development (TDD).
 Create a calculator that takes a string of numbers and returns their sum.
 The implementation follows incremental development using TDD.
 
+### Features
+- Empty string returns 0
+- Supports single and multiple numbers
+- Supports comma and newline delimiters
+- Supports custom delimiters
+- Throws exception for negative numbers
+
+
+
 ## How to Run Tests
 ```bash
 ./gradlew test
+
