@@ -8,8 +8,19 @@ class StringCalculator {
 
         val (delimiter, numbersPart) = extractDelimiter(s)
 
+        val values = numbersPart
+            .split(*delimiter)
+            .map { it.toInt() }
 
-        return numbersPart.split(*delimiter).map { it.toInt() }.sum()
+        val negatives = values.filter { it < 0 }
+
+        if (negatives.isNotEmpty()) {
+            throw IllegalArgumentException(
+                "negative numbers not allowed: ${negatives.joinToString(", ")}"
+            )
+        }
+
+        return values.sum()
     }
 
     private fun extractDelimiter(numbers: String): Pair<Array<String>, String> {
