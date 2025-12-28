@@ -18,4 +18,11 @@ class StringCalculatorTest {
         val result = calculator.add("1,2,3,4")
         assertEquals(10, result)
     }
+
+    @Test
+    fun `should support newline as delimiters`() {
+        val calculator = StringCalculator()
+        val result = calculator.add("1\n2, 3")
+        assertEquals(6, result)
+    }
 }
